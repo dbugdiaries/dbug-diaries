@@ -2,42 +2,83 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dbug Diaries</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon for light mode -->
+  <link rel="icon" type="image/png" href="assets/favicons/light/favicon-32x32.png"
+    media="(prefers-color-scheme: light)">
+  <link rel="apple-touch-icon" href="assets/favicons/light/apple-touch-icon.png" media="(prefers-color-scheme: light)">
+  <link rel="manifest" href="assets/favicons/light/site.webmanifest" media="(prefers-color-scheme: light)">
+
+  <!-- Favicon for dark mode -->
+  <link rel="icon" type="image/png" href="assets/favicons/dark/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="assets/favicons/dark/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="assets/favicons/dark/site.webmanifest" media="(prefers-color-scheme: dark)">
+
+  <!-- Fallback favicon -->
+  <link rel="icon" href="assets/favicons/light/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
   <header>
-    <h1>Dbug Diaries</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="notes/python.html">Python</a>
-      <a href="notes/webdev.html">Web Dev</a>
-      <a href="notes/devops.html">DevOps</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="brand-logo">
+        <picture>
+          <img src="assets/branding/logo-light.png" alt="Dbug Diaries logo" height="40" />
+          <source srcset="assets/branding/logo-dark.png" media="(prefers-color-scheme: dark)" />
+        </picture>
+        <span class="brand-name">Dbug Diaries</span>
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <!-- nav-right: only links -->
+      <div class="nav-right">
+        <a href="/learn.html" class="nav-link">Learn</a>
+
+        <!-- Projects Dropdown -->
+        <div class="nav-link dropdown">
+          <span class="dropdown-toggle">Projects</span>
+          <div class="dropdown-menu">
+            <a href="/python-projects.html" class="dropdown-item">Python Projects</a>
+          </div>
+        </div>
+      </div>
+      <input type="search" placeholder="Search..." class="search-input search-always" aria-label="Search" />
+
     </nav>
-    <p>Documenting the journey of learning Software Engineering, DevOps, and more.</p>
   </header>
 
-  <main>
-    <section class="notes-section">
-      <h2>📚 Latest Notes</h2>
-      <ul>
-        <li>🐍 Python Basics</li>
-        <li>🌐 HTML & CSS Layouts</li>
-        <li>⚙️ DevOps Tools Overview</li>
-      </ul>
-    </section>
-  </main>
+  <a href="/java-variables.html" class="nav-link">Java Variables</a>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Dbug Diaries by DbugDev</p>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const navRight = document.querySelector(".nav-right");
+
+    toggle.addEventListener("click", () => {
+      navRight.classList.toggle("active");
+    });
+
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    dropdownToggle.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>

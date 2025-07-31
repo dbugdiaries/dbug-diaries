@@ -1,0 +1,168 @@
+Introduction to Programming with Python – Lecture Notes
+1. The Power of Programming
+Modern computers can perform repetitive and time-consuming tasks in seconds—if we know how to give them the right instructions. Even basic programming knowledge can dramatically reduce manual work. A task that takes hours or days for a person can be automated with just a few lines of code.
+
+Real-Life Example
+In the early 2000s, a simple script saved employees hours by comparing store prices in minutes. This highlights how computers can efficiently handle tedious data tasks.
+
+2. Who Should Learn Programming?
+This course isn't just for aspiring professional developers. If you:
+
+Work in an office,
+
+Manage files and spreadsheets,
+
+Collect online data,
+
+Or want to make your digital life easier,
+
+...then this course is for you.
+
+You’ll learn how to automate repetitive tasks like:
+
+Renaming or sorting large groups of files
+
+Filling out forms automatically
+
+Scraping data from websites
+
+Sending automated notifications
+
+Processing spreadsheets and emails
+
+Managing basic databases
+
+Extracting text from media
+
+3. Learning Style of This Course
+This course focuses on beginner-friendly learning:
+
+You’ll write code that works, even if it’s not always the most optimized.
+
+Some advanced topics (like object-oriented programming) are skipped at first to keep things simple.
+
+Simplicity and practical use come before technical complexity.
+
+4. What is Programming?
+Programming means writing step-by-step instructions for the computer. Basic patterns include:
+
+Doing one thing after another
+
+Making decisions using “if/else”
+
+Repeating tasks a set number of times
+
+Looping until a condition is met
+
+Even without experience, you can often understand what a small program does just by reading it.
+
+Programming combines logic and creativity—similar to building with LEGO or creating art. The major difference is: software can be duplicated endlessly and shared with the world.
+
+5. Why Python?
+Python is both:
+
+A language, which defines how we write instructions,
+
+And an interpreter, the software that runs those instructions.
+
+Python is widely recommended for beginners because:
+
+It’s easy to read and understand,
+
+It allows you to write useful programs without deep technical knowledge,
+
+It’s widely used in data analysis, web development, automation, and more.
+
+Fun fact: The name "Python" comes from Monty Python, not the snake.
+
+6. Programming Myths Debunked
+❌ "You need to be good at math."
+While some programming fields involve math, most daily programming tasks require logic and pattern recognition, not advanced mathematics. It’s more like solving a Sudoku than doing calculus.
+
+❌ "I'm too old to start learning."
+You’re never too old to learn to code. Many people start in their 30s, 40s, or beyond. It’s more about consistency than age.
+
+❌ "AI will replace programmers."
+AI tools can help with coding, but they make mistakes and require human oversight. Learning programming gives you the power to use these tools wisely and avoid being misled by them.
+
+7. Setting Up Your Tools
+Install Python
+Visit: python.org
+
+Download and install Python for your operating system (Windows, macOS, or Linux)
+
+Install Mu Editor
+Visit: codewith.mu
+
+Mu is a beginner-friendly editor to write and run Python code
+
+On first launch, choose “Python 3” mode
+
+Using IDLE (Alternative Editor)
+IDLE is included with Python
+
+It's a simple environment for writing and testing code
+
+8. Running Your First Code
+To test if everything works, open Mu or IDLE and type:
+
+python
+Copy
+Edit
+print('Hello, world!')
+This prints a message to your screen. Congratulations—you’ve just written your first line of code!
+
+9. Understanding Errors
+Mistakes happen, and they’re part of learning. Python gives you messages when things go wrong. These errors might look confusing at first, but they’re valuable clues.
+
+For example:
+
+python
+Copy
+Edit
+'42' + 3
+This causes an error because Python can’t combine text and numbers directly. Look up the exact error message online to find explanations and solutions.
+
+10. Where to Get Help
+✅ Search for the full error message
+Copy the message into Google or a site like Stack Overflow.
+
+✅ Ask Smart Questions
+When asking others for help:
+
+Clearly explain what you’re trying to do
+
+Share your code and the error messages
+
+Mention your system (Windows/macOS/Linux) and Python version
+
+List the steps you’ve already tried
+
+✅ Recommended Communities
+Stack Overflow
+
+r/learnprogramming
+
+r/inventwithpython
+
+11. What’s New in This Edition
+This updated edition adds practical projects like:
+
+Controlling browsers with Playwright or Selenium
+
+Creating and querying databases
+
+Working with PDFs and images
+
+Extracting text from videos, images, and audio
+
+Building command line tools
+
+Generating graphs
+
+12. Final Thoughts
+Most people use computers only as tools, but by learning programming, you turn your computer into a powerful assistant. You don’t need special equipment—just curiosity and patience. Mistakes are part of the journey, and the more you practice, the more confident you’ll become.
+
+Remember: Programming isn’t about being perfect. It’s about problem-solving, learning, and making the computer work for you.
+
+Let’s get started!

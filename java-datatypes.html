@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Types in Java — Deep Dive with Real Insight</title>
+
+  <!-- Favicon for light mode -->
+  <link rel="icon" type="image/png" href="assets/favicons/light/favicon-32x32.png"
+    media="(prefers-color-scheme: light)">
+  <link rel="apple-touch-icon" href="assets/favicons/light/apple-touch-icon.png" media="(prefers-color-scheme: light)">
+  <link rel="manifest" href="assets/favicons/light/site.webmanifest" media="(prefers-color-scheme: light)">
+
+  <!-- Favicon for dark mode -->
+  <link rel="icon" type="image/png" href="assets/favicons/dark/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="assets/favicons/dark/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="assets/favicons/dark/site.webmanifest" media="(prefers-color-scheme: dark)">
+
+  <!-- Fallback favicon -->
+  <link rel="icon" href="assets/favicons/light/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #2c3e50;
+    }
+
+    code {
+      background-color: #eaeaea;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-left: 5px solid #007acc;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #efefef;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="brand-logo">
+        <picture>
+          <img src="assets/branding/logo-light.png" alt="Dbug Diaries logo" height="40" />
+          <source srcset="assets/branding/logo-dark.png" media="(prefers-color-scheme: dark)" />
+        </picture>
+        <span class="brand-name">Dbug Diaries</span>
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <!-- nav-right: only links -->
+      <div class="nav-right">
+        <a href="/learn.html" class="nav-link">Learn</a>
+
+        <!-- Projects Dropdown -->
+        <div class="nav-link dropdown">
+          <span class="dropdown-toggle">Projects</span>
+          <div class="dropdown-menu">
+            <a href="/python-projects.html" class="dropdown-item">Python Projects</a>
+          </div>
+        </div>
+      </div>
+      <input type="search" placeholder="Search..." class="search-input search-always" aria-label="Search" />
+
+    </nav>
+  </header>
+
+  <h1>📘 Full Explanation: Data Types in Java — Deep Dive with Real Insight</h1>
+
+  <section>
+    <h2>🧠 What Are Data Types?</h2>
+    <p>In Java, data types define what kind of data a variable can hold. This is crucial because Java is a
+      statically-typed language — the compiler needs to know the type of every variable before it runs.</p>
+  </section>
+
+  <section>
+    <h2>Java's Type System</h2>
+    <ul>
+      <li>Java is a typed language. That means every variable must be declared with a type.</li>
+      <li>Example: <code>int age = 25;</code> — <code>int</code> tells Java that <code>age</code> stores integers.</li>
+      <li>This is different from dynamically typed languages like JavaScript, where you can write:</li>
+    </ul>
+    <pre><code>let age = 25;  // No type specified</code></pre>
+    <p>Java enforces type safety, which reduces runtime errors.</p>
+  </section>
+
+  <section>
+    <h2>🔢 Java Data Types — The Two Categories</h2>
+    <h3>1. Primitive Data Types (Built-in)</h3>
+    <p>These are predefined by Java, lightweight, and fast. Java has 8 primitive data types:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Size</th>
+          <th>Example Values</th>
+          <th>Use For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>byte</td>
+          <td>1 byte</td>
+          <td>-128 to 127</td>
+          <td>Small numbers, memory-saving</td>
+        </tr>
+        <tr>
+          <td>short</td>
+          <td>2 bytes</td>
+          <td>-32,768 to 32,767</td>
+          <td>Medium numbers</td>
+        </tr>
+        <tr>
+          <td>int</td>
+          <td>4 bytes</td>
+          <td>~ -2B to 2B</td>
+          <td>Default for whole numbers</td>
+        </tr>
+        <tr>
+          <td>long</td>
+          <td>8 bytes</td>
+          <td>Huge numbers</td>
+          <td>Big integers</td>
+        </tr>
+        <tr>
+          <td>float</td>
+          <td>4 bytes</td>
+          <td>3.14f</td>
+          <td>Decimal numbers (less precise)</td>
+        </tr>
+        <tr>
+          <td>double</td>
+          <td>8 bytes</td>
+          <td>3.14159265359</td>
+          <td>Decimal numbers (more precise)</td>
+        </tr>
+        <tr>
+          <td>char</td>
+          <td>2 bytes</td>
+          <td>'A', '%'</td>
+          <td>Single characters</td>
+        </tr>
+        <tr>
+          <td>boolean</td>
+          <td>1 bit</td>
+          <td>true, false</td>
+          <td>Logical values (conditions)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>➡️ Important:</strong> All primitive data types start with lowercase letters in Java.</p>
+
+    <h3>2. Non-Primitive Data Types (Reference types)</h3>
+    <p>These are objects, created by the programmer or Java itself. Examples:</p>
+    <ul>
+      <li>String (a sequence of characters)</li>
+      <li>Arrays, Classes, Interfaces</li>
+    </ul>
+    <p>We’ll focus on primitive types first, as in the lecture.</p>
+  </section>
+
+  <section>
+    <h2>🧬 Deep Dive into Each Primitive Data Type</h2>
+    <h3>1. byte</h3>
+    <p>Size: 8 bits (1 byte)<br>Range: -128 to 127 (256 total values)<br>Use Case: For memory-efficient storage in large
+      arrays.</p>
+    <pre><code>byte myByte = 8;
+System.out.println(myByte); // prints 8</code></pre>
+
+    <h3>2. short</h3>
+    <p>Size: 2 bytes (16 bits)<br>Range: -32,768 to 32,767<br>Less common in real-world Java — int is preferred.</p>
+
+    <h3>3. int</h3>
+    <p>Size: 4 bytes<br>Range: ~ -2 billion to +2 billion<br>Most used data type for whole numbers</p>
+    <pre><code>int age = 25;
+System.out.println(age);</code></pre>
+
+    <h3>4. long</h3>
+    <p>Size: 8 bytes<br>Range: Way bigger than int<br>Use Case: Timestamps, large IDs</p>
+    <pre><code>long population = 8000000000L;</code></pre>
+
+    <h3>5. float</h3>
+    <p>Size: 4 bytes<br>Precision: Up to 7 decimal places<br>Decimal numbers (use <code>f</code> suffix)</p>
+    <pre><code>float pencilPrice = 10.5f;</code></pre>
+
+    <h3>6. double</h3>
+    <p>Size: 8 bytes<br>Precision: Up to 15 decimal places<br>Default for decimal values</p>
+    <pre><code>double pi = 3.14159265359;</code></pre>
+
+    <h3>7. char</h3>
+    <p>Size: 2 bytes<br>Stores: Single character<br>Use single quotes <code>'A'</code>, not double quotes</p>
+    <pre><code>char grade = 'A';</code></pre>
+
+    <h3>8. boolean</h3>
+    <p>Size: 1 bit<br>Values: true or false<br>Use Case: Conditional logic</p>
+    <pre><code>boolean isJavaFun = true;</code></pre>
+  </section>
+
+  <section>
+    <h2>🧮 Understanding Memory and Range</h2>
+    <p>Java allocates memory based on data type.<br>A byte = 8 bits → Can store 2⁸ = 256 values</p>
+    <p>This explains:</p>
+    <ul>
+      <li>Why byte stores only -128 to 127</li>
+      <li>Why int can store billions</li>
+    </ul>
+    <p><strong>Formula:</strong><br>
+      Range = −(2ⁿ⁻¹) to (2ⁿ⁻¹ − 1), where n is the number of bits</p>
+  </section>
+
+  <section>
+    <h2>🧑‍💻 Real-World Examples</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Data Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>User's age</td>
+          <td>int</td>
+        </tr>
+        <tr>
+          <td>Temperature in decimal</td>
+          <td>float</td>
+        </tr>
+        <tr>
+          <td>Amount in a bank account</td>
+          <td>double</td>
+        </tr>
+        <tr>
+          <td>Gender as a character</td>
+          <td>char</td>
+        </tr>
+        <tr>
+          <td>Is student passed (yes/no)?</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <td>Unique product ID (very big)</td>
+          <td>long</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>📓 Detailed Study Notes (Formatted for Reading)</h2>
+    <h3>🧱 Java Primitive Data Types</h3>
+    <h4>➤ Integer Types:</h4>
+    <ul>
+      <li>byte — 1 byte, small numbers</li>
+      <li>short — 2 bytes</li>
+      <li>int — 4 bytes, default for whole numbers</li>
+      <li>long — 8 bytes, large integers</li>
+    </ul>
+    <h4>➤ Floating-Point Types:</h4>
+    <ul>
+      <li>float — 4 bytes, less precise</li>
+      <li>double — 8 bytes, more precise, default</li>
+    </ul>
+    <h4>➤ Others:</h4>
+    <ul>
+      <li>char — single Unicode character (like 'A', '%')</li>
+      <li>boolean — true / false</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧾 Condensed Revision Notes</h2>
+    <ul>
+      <li>Java is statically typed: must declare variable types.</li>
+      <li>8 primitive types in Java:
+        <ul>
+          <li>byte, short, int, long (integers)</li>
+          <li>float, double (decimals)</li>
+          <li>char (single character)</li>
+          <li>boolean (true/false)</li>
+        </ul>
+      </li>
+      <li>Use float with <code>f</code>, long with <code>L</code></li>
+      <li>Memory: 1 byte = 8 bits → defines range</li>
+      <li>Use int and double by default unless memory or precision is an issue</li>
+      <li>Use boolean in conditions: <code>if (isActive) {...}</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧠 Easy-to-Forget Points — and Memory Tricks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Thing You Might Forget</th>
+          <th>Memory Trick or Reminder</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>float needs an f</td>
+          <td>"Float needs an Flag"</td>
+        </tr>
+        <tr>
+          <td>char uses single quotes 'A'</td>
+          <td>"Char = Character = One letter, One quote"</td>
+        </tr>
+        <tr>
+          <td>boolean values are lowercase</td>
+          <td>"true/false — all lowercase, never True"</td>
+        </tr>
+        <tr>
+          <td>Size of each data type</td>
+          <td>Use mnemonic: "B S I L F D C B"</td>
+        </tr>
+        <tr>
+          <td>Memory size importance</td>
+          <td>Think: “Less memory = less range”</td>
+        </tr>
+        <tr>
+          <td>int is default for whole numbers</td>
+          <td>Unless told otherwise, Java picks int</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>🎯 Interview Questions and Full Answers</h2>
+
+    <h3>✅ Q1: Why is Java called a statically typed language?</h3>
+    <p>Java is statically typed because every variable must be declared with a data type at compile time. This allows
+      the Java compiler to:</p>
+    <ul>
+      <li>Check for type mismatches</li>
+      <li>Prevent runtime errors</li>
+      <li>Allocate efficient memory</li>
+    </ul>
+    <pre><code>int age = 25; // age must hold an int
+age = "twenty"; // Error! Can't assign String to int</code></pre>
+
+    <h3>✅ Q2: What are the 8 primitive data types in Java and their sizes?</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Size</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>byte</td>
+          <td>1 byte</td>
+          <td>Small integers</td>
+        </tr>
+        <tr>
+          <td>short</td>
+          <td>2 bytes</td>
+          <td>Medium integers</td>
+        </tr>
+        <tr>
+          <td>int</td>
+          <td>4 bytes</td>
+          <td>Default for whole numbers</td>
+        </tr>
+        <tr>
+          <td>long</td>
+          <td>8 bytes</td>
+          <td>Large integers</td>
+        </tr>
+        <tr>
+          <td>float</td>
+          <td>4 bytes</td>
+          <td>Decimal numbers (less precision)</td>
+        </tr>
+        <tr>
+          <td>double</td>
+          <td>8 bytes</td>
+          <td>Decimal numbers (high precision)</td>
+        </tr>
+        <tr>
+          <td>char</td>
+          <td>2 bytes</td>
+          <td>Single Unicode character</td>
+        </tr>
+        <tr>
+          <td>boolean</td>
+          <td>1 bit</td>
+          <td>true/false only</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>✅ Q3: What is the difference between float and double?</h3>
+    <ul>
+      <li><code>float</code> uses 4 bytes, <code>double</code> uses 8 bytes</li>
+      <li><code>float</code> is less precise (up to 7 digits), <code>double</code> is more precise (up to 15 digits)
+      </li>
+      <li>Use float only when memory is tight (e.g., on mobile devices)</li>
+    </ul>
+    <pre><code>float price = 10.5f;
+double pi = 3.14159265359;</code></pre>
+
+    <h3>✅ Q4: What happens if you assign a value outside the range of a data type?</h3>
+    <p>It causes a compilation error or unexpected behavior.</p>
+    <pre><code>byte b = 130; // Error: 130 is outside byte range (-128 to 127)</code></pre>
+    <p>Java won't allow overflow silently (unlike C in some cases).</p>
+
+    <h3>✅ Q5: Why do we have multiple integer types in Java (byte, short, int, long)?</h3>
+    <ul>
+      <li>Each type is optimized for:
+        <ul>
+          <li>Memory efficiency: <code>byte</code> and <code>short</code> are useful in large arrays or embedded systems
+          </li>
+          <li>Performance: smaller data types can be faster</li>
+          <li>Precision: <code>long</code> is used when <code>int</code> isn’t big enough</li>
+        </ul>
+      </li>
+      <li>Using just one type (like only int) would:
+        <ul>
+          <li>Waste memory</li>
+          <li>Limit program scalability</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const navRight = document.querySelector(".nav-right");
+
+    toggle.addEventListener("click", () => {
+      navRight.classList.toggle("active");
+    });
+
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    dropdownToggle.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+  </script>
+
+</body>
+
+</html>

@@ -4,6 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Full Detailed Notes on Java Variables</title>
+  <!-- Favicon for light mode -->
+  <link rel="icon" type="image/png" href="assets/favicons/light/favicon-32x32.png"
+    media="(prefers-color-scheme: light)">
+  <link rel="apple-touch-icon" href="assets/favicons/light/apple-touch-icon.png" media="(prefers-color-scheme: light)">
+  <link rel="manifest" href="assets/favicons/light/site.webmanifest" media="(prefers-color-scheme: light)">
+
+  <!-- Favicon for dark mode -->
+  <link rel="icon" type="image/png" href="assets/favicons/dark/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="assets/favicons/dark/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="assets/favicons/dark/site.webmanifest" media="(prefers-color-scheme: dark)">
+
+  <!-- Fallback favicon -->
+  <link rel="icon" href="assets/favicons/light/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -75,6 +95,37 @@
 </head>
 
 <body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="brand-logo">
+        <picture>
+          <img src="assets/branding/logo-light.png" alt="Dbug Diaries logo" height="40" />
+          <source srcset="assets/branding/logo-dark.png" media="(prefers-color-scheme: dark)" />
+        </picture>
+        <span class="brand-name">Dbug Diaries</span>
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <!-- nav-right: only links -->
+      <div class="nav-right">
+        <a href="/learn.html" class="nav-link">Learn</a>
+
+        <!-- Projects Dropdown -->
+        <div class="nav-link dropdown">
+          <span class="dropdown-toggle">Projects</span>
+          <div class="dropdown-menu">
+            <a href="/python-projects.html" class="dropdown-item">Python Projects</a>
+          </div>
+        </div>
+      </div>
+      <input type="search" placeholder="Search..." class="search-input search-always" aria-label="Search" />
+
+    </nav>
+  </header>
 
   <h1>✅ FULL DETAILED NOTES ON JAVA VARIABLES</h1>
   <p><strong>(Beginner-friendly, expert-backed explanations)</strong></p>
@@ -363,6 +414,23 @@ int _id;      // valid
 int $salary;  // valid
 int 1num;     // invalid</code></pre>
   </div>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const navRight = document.querySelector(".nav-right");
+
+    toggle.addEventListener("click", () => {
+      navRight.classList.toggle("active");
+    });
+
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    dropdownToggle.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+  </script>
 
 </body>
 
